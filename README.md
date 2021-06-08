@@ -1,6 +1,6 @@
 # Collision-avoidance
 Towards Monocular Vision Based Collision Avoidance Using Deep Reinforcement Learning
-
+You could see the algorithm verification in real environment from [here](https://www.youtube.com/watch?v=oSQHCsvuE-8)
 ### Depth Estimation
 - Any tensorflow version above 1.10.0 would be fine
 - Depth Estimation model is based on ResNet 50 architecture
