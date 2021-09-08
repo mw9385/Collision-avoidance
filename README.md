@@ -2,7 +2,7 @@
 Towards Monocular Vision Based Collision Avoidance Using Deep Reinforcement Learning
 You could see the algorithm verification in real environment from [here](https://www.youtube.com/watch?v=oSQHCsvuE-8)
 ### Depth Estimation
-- Tensorflow version above 1.12.0 would be fine 
+- Tensorflow version == 1.12.0
 - Depth Estimation model is based on ResNet 50 architecture
 - python file that contains the model architecture is located in **models**
 - Due to huge size of trained depth estimation model, you have to download the depth estimation model [here](https://github.com/iro-cp/FCRN-DepthPrediction).
