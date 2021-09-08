@@ -19,14 +19,11 @@ from gazebo_msgs.msg import ModelState, ModelStates
 from geometry_msgs.msg import Vector3Stamped
 from skimage.transform import resize
 from PIL import Image as iimage
-from keras.utils.training_utils import multi_gpu_model
-from models.cnn_model_LSTM_many_to_one import cnn_lstm
 from matplotlib import style, gridspec                              
-from tensorflow import Session, Graph
 from keras.models import model_from_json
 from keras.utils import to_categorical
+from tensorflow import Session, Graph
 
-import matplotlib
 import matplotlib.pyplot as plt
 import rospy
 import tensorflow as tf
