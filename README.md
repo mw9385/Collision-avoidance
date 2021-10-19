@@ -7,7 +7,7 @@ You could see the algorithm verification in real environment from [here](https:/
 ### Overall Network Structure
 An RGB image from a monocular sensor is converted into a depth image. Then the estimated depth image is used as an input of the Dueling Double Deep Q-Network. 
 
-![D3QN figure](https://user-images.githubusercontent.com/44888654/137865779-df4521ce-b4f3-4e99-b737-1243c88eb65a.PNG)
+![D3QN figure](https://user-images.githubusercontent.com/44888654/137885281-277cace9-7662-4e75-a57a-8d67af29ada0.PNG)
 
 ### Depth Estimation
 - Tensorflow version == 1.12.0
