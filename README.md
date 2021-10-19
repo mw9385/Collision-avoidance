@@ -2,6 +2,7 @@
 Towards Monocular Vision Based Collision Avoidance Using Deep Reinforcement Learning
 You could see the algorithm verification in real environment from [here](https://www.youtube.com/watch?v=oSQHCsvuE-8)
 
+![충돌회피 1 (2)](https://user-images.githubusercontent.com/44888654/137864151-2f426558-5fd0-48c9-9b8b-7e606caf02e7.gif)
 ![충돌회피 2 (2)](https://user-images.githubusercontent.com/44888654/137863865-6b8fc3b1-329d-41f0-825e-bb329854d923.gif)
 ![충돌회피 3](https://user-images.githubusercontent.com/44888654/137863889-5f479905-b3fa-4aad-afb3-8ebdce4480ba.gif)
 
