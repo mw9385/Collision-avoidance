@@ -7,6 +7,10 @@ You could see the algorithm verification in real environment from [here](https:/
 ![충돌회피 3](https://user-images.githubusercontent.com/44888654/137863889-5f479905-b3fa-4aad-afb3-8ebdce4480ba.gif)
 ![충돌회피 5](https://user-images.githubusercontent.com/44888654/137865193-c99dda20-8176-4efe-8108-b9abbbfd18f7.gif)
 
+### Overall Network Structure
+An RGB image from a monocular sensor is converted into a depth image. Then the estimated depth image is used as an input of the Dueling Double Deep Q-Network. 
+![D3QN figure](https://user-images.githubusercontent.com/44888654/137865779-df4521ce-b4f3-4e99-b737-1243c88eb65a.PNG)
+
 ### Depth Estimation
 - Tensorflow version == 1.12.0
 - Depth Estimation model is based on ResNet 50 architecture
