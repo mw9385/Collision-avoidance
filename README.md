@@ -48,4 +48,5 @@ You could change the initial position and velocity in the ENV.py.
 ### Training 
 To train the model `python3 D3QN.py`. You could change the hyperparameters in the D3QN.py.
 ### Testing
-To test the model, please change the trained model's directory and then type `python3 Test.py`.
+- Simulation Test: To test the model, please change the trained model's directory and then type `python3 Test.py`.
+- Real world experiment test: Go to real_world_test file and run the `D3QN_test.py`.
