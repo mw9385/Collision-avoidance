@@ -52,4 +52,8 @@ To train the model `python3 D3QN.py`. You could change the hyperparameters in th
 - Real world experiment test: Go to real_world_test file and run the `D3QN_test.py`.
 
 ### Citation
-#### This research has been accepted in Expert Systems with Application (ESWA). The title of the paper is 'Towards Monocular Vision-Bassed Autonomous Flight Through Deep Reinforcement Learning'. The paper can be found on online within 2~3 months.
+```
+This research has been accepted in Expert Systems with Application (ESWA).   
+The title of the paper is 'Towards Monocular Vision-Bassed Autonomous Flight Through Deep Reinforcement Learning'.   
+The paper can be found on online within 2~3 months.
+```
