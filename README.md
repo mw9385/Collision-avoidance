@@ -31,6 +31,8 @@ To implement the code, you need
 ### Training Environment Setup
 #### 1. Spawning the drone for training
 
+### Citation
+#### This research has been accepted in Expert Systems with Application (ESWA). The title of the paper is 'Towards Monocular Vision-Bassed Autonomous Flight Through Deep Reinforcement Learning'. The paper can be found on online within 2~3 months.
 Training agent for the drone is [hector_qaudrotor](http://wiki.ros.org/hector_quadrotor). Please take a look at the ROS description and install it.
 To spawn the training agent for our setup, type the command below:
 ```
