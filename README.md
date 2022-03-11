@@ -1,7 +1,6 @@
 # Collision-avoidance
 Towards Monocular Vision Based Collision Avoidance Using Deep Reinforcement Learning
 You could see the algorithm verification in real environment from [here](https://www.youtube.com/watch?v=oSQHCsvuE-8). No distance sensors are used. 
-The paper can be found in [here](https://www.sciencedirect.com/science/article/pii/S0957417422002111?via%3Dihub).
 
 ![충돌회피 1 (2)](https://user-images.githubusercontent.com/44888654/137864151-2f426558-5fd0-48c9-9b8b-7e606caf02e7.gif) ![충돌회피 2 (2)](https://user-images.githubusercontent.com/44888654/137863865-6b8fc3b1-329d-41f0-825e-bb329854d923.gif) ![충돌회피 3](https://user-images.githubusercontent.com/44888654/137863889-5f479905-b3fa-4aad-afb3-8ebdce4480ba.gif) ![충돌회피 5](https://user-images.githubusercontent.com/44888654/137865193-c99dda20-8176-4efe-8108-b9abbbfd18f7.gif)
 
@@ -56,5 +55,5 @@ To train the model `python3 D3QN.py`. You could change the hyperparameters in th
 ```
 This research has been accepted in Expert Systems with Application (ESWA).   
 The title of the paper is 'Towards Monocular Vision-Bassed Autonomous Flight Through Deep Reinforcement Learning'.   
-The paper can be found on online within 2~3 months.
+The paper can be found in [here](https://www.sciencedirect.com/science/article/pii/S0957417422002111?via%3Dihub).
 ```
