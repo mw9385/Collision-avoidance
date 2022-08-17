@@ -314,7 +314,7 @@ class D3QNAgent:
                 # selection of action is from model
                 # update is from target model
                 
-                target[i] = reward[i] + self.discount_factor * [i][np.argmax(value[i])]
+                target[i] = reward[i] + self.discount_factor * target_value[i][np.argmax(value[i])]
 
         loss = self.optimizer([history, action, target])
         self.avg_loss += loss[0]
