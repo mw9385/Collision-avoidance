@@ -1,8 +1,8 @@
 # coding: utf-8
-​
+
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-​
+
 from collections import deque
 from keras import backend as K
 from keras.backend.tensorflow_backend import set_session
@@ -18,7 +18,7 @@ from geometry_msgs.msg import Vector3Stamped
 from nav_msgs.msg import Odometry
 from PIL import Image as iimage                                         
 from tensorflow import Session, Graph
-​
+
 import cv2
 import copy
 import matplotlib
@@ -32,16 +32,16 @@ import random
 import scipy.misc
 import tensorflow as tf
 import time
-​
+
 from geometry_msgs.msg import TwistStamped
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import Int8
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import Bool
-​
+
 # load model for collision probability estimation
 from keras.models import model_from_json
-​
+
 # define empty image variable
 depth = np.zeros([128,160]).astype('float32')
 obs_flag = False
@@ -51,19 +51,19 @@ def callback_camera(msg):
     image = np.frombuffer(msg.data, dtype=np.uint8)    
     image = np.reshape(image, [480,640,3]) 
     image = np.array(image)  
-​
-​
+
+
 def show_figure(image):
     #show image using cv2    
     image = cv2.resize(image, (256, 320), interpolation=cv2.INTER_CUBIC)
     cv2.imshow('Prediction image', image)    
     cv2.waitKey(1)
-​
-​
+
+
 def get_depth(img_from_depth_est):
     global depth
     global obs_flag
-​
+
     obs_threshold = 0.55
     
     #np_image = np.frombuffer(img_from_depth_est.data, np.float32)
@@ -76,7 +76,7 @@ def get_depth(img_from_depth_est):
     obs_detector_array[obs_detector_array < obs_threshold] = 0
     cv2.imshow("obs_detect",obs_detector_array)
     cv2.waitKey(1)
-​
+
     detection_threshold = np.average(obs_detector_array)
     print(detection_threshold)
     if detection_threshold <= 0.94:
@@ -84,29 +84,29 @@ def get_depth(img_from_depth_est):
         print("obstacle detected")
     else:
         obs_flag = False
-​
+
     pil_image =  iimage.fromarray(np.float32(np_image))
     
     pil_image = pil_image.resize((160, 128), iimage.LANCZOS)
     depth = np.array(pil_image)
     # show_figure(depth)
-​
-​
+
+
 init = tf.global_variables_initializer()
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 config.gpu_options.per_process_gpu_memory_fraction = 0.3
 sess = tf.Session(config=config)
 sess.run(init)
-​
-​
+
+
 class TestAgent:
     def __init__(self, action_size):
         self.state_size = (128, 160, 6)
         self.action_size = action_size
         self.model = self.build_model()        
         " Erase the config and tf.initializer when you load another model by keras"
-​
+
     def build_model(self):
         input = Input(shape=self.state_size)
         h1 = Conv2D(32, (8, 8), strides = (8,8), activation = "relu", name = "conv1")(input)
@@ -134,13 +134,13 @@ class TestAgent:
             q_value = self.model.predict(history)
         
         return np.argmax(q_value[0])
-​
+
     def load_model(self, filename):
         self.model.load_weights(filename)
         global graph
         graph = tf.get_default_graph()
-​
-​
+
+
 if __name__ == '__main__':
     rospy.init_node('Avoider', anonymous=True)
     
@@ -163,9 +163,9 @@ if __name__ == '__main__':
     state = depth
     history = np.stack((state, state, state, state, state, state), axis = 2)                
     history = np.reshape([history], (1,128,160,6))           
-​
+
     while not rospy.is_shutdown():
-​
+
         action = agent.get_action(history)  
         print(action)
         
@@ -175,12 +175,11 @@ if __name__ == '__main__':
         # image preprocessing                        
         next_state = depth
         #show_figure(next_state)        
-​
+
         # image for collision check            
         next_state = np.reshape([next_state],(1,128,160,1))
         next_history = np.append(next_state, history[:,:,:,:5],axis = 3)
-​
+
         history = next_history
         rate.sleep()
-​
-​
+
