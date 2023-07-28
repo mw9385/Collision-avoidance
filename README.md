@@ -54,6 +54,13 @@ To train the model `python3 D3QN.py`. You could change the hyperparameters in th
 
 ### Citation
 ```
-This research has been accepted in Expert Systems with Application (ESWA).   
-The title of the paper is 'Towards Monocular Vision-Bassed Autonomous Flight Through Deep Reinforcement Learning'.   
+@article{kim2022towards,
+  title={Towards monocular vision-based autonomous flight through deep reinforcement learning},
+  author={Kim, Minwoo and Kim, Jongyun and Jung, Minjae and Oh, Hyondong},
+  journal={Expert Systems with Applications},
+  volume={198},
+  pages={116742},
+  year={2022},
+  publisher={Elsevier}
+}  
 ```
